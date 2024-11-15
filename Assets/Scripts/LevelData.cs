@@ -7,6 +7,6 @@ using UnityEngine;
 public class LevelData
 {
     public int ID;
-    public float Score;
+    public int Score;
     public bool IsOpen;
 }

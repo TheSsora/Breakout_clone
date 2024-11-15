@@ -15,7 +15,7 @@ public class LoseCLL : MonoBehaviour
 
         if (BallsCount <= 0 && BonusesCount <= 0)
         {
-            GameOverUI.SetActive(true);
+            GameOver();
         }               
     }
     public void AddBall(float value)
@@ -25,5 +25,10 @@ public class LoseCLL : MonoBehaviour
     public void AddBonus(float value)
     {
         BonusesCount += value;
+    }
+    private void GameOver()
+    {
+        GameOverUI.SetActive(true);
+        GameManager.Instance.GameData.SetScoreByLevelID(GameManager.Instance.GameData.SelectedLevelID, GameManager.Instance.Score);
     }
 }

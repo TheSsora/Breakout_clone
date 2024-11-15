@@ -549,6 +549,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6536534866300583117, guid: 66297e63fb4832a4a9015ba1b17f7dd2, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 981375576}
+    - target: {fileID: 6536534866300583117, guid: 66297e63fb4832a4a9015ba1b17f7dd2, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Exit
+      objectReference: {fileID: 0}
+    - target: {fileID: 6536534866300583117, guid: 66297e63fb4832a4a9015ba1b17f7dd2, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8104961810517102217, guid: 66297e63fb4832a4a9015ba1b17f7dd2, type: 3}
       propertyPath: m_Name
       value: ExitButton
@@ -902,7 +914,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99bc46603c4e89144a02c097ceb55787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Score: 0
   scoreText: {fileID: 1909706663}
 --- !u!114 &981375576
 MonoBehaviour:
@@ -916,7 +927,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aff9d6c8f60b0f549a218f32ebb361a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Score: 0
+  GameData: {fileID: 11400000, guid: fc7818bada428a14fb36d3f5980e57b6, type: 2}
+  MainScene: {fileID: 102900000, guid: fc51cebe255f058419f34e39dbfd1f52, type: 3}
   LoseCLL: {fileID: 981375577}
+  UILinksManager: {fileID: 981375575}
 --- !u!114 &981375577
 MonoBehaviour:
   m_ObjectHideFlags: 0

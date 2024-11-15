@@ -18,4 +18,22 @@ public class GeneralGameData : ScriptableObject
         SelectedLevelID = levelID;
         SceneManager.LoadScene(BaseScene.name, LoadSceneMode.Single);
     }
+    public int GetScoreByLevelID(int levelID)
+    {
+        foreach (LevelData level in BaseLevels)
+        {
+            if(level.ID == levelID) return level.Score;
+        }
+        Debug.LogWarning("Level ID not found!");
+        return 0;
+    }
+    public void SetScoreByLevelID(int levelID, int score)
+    {
+        foreach (LevelData level in BaseLevels)
+        {
+            if (level.ID == levelID)
+                if(level.Score < score)
+                    level.Score = score;
+        }
+    }
 }

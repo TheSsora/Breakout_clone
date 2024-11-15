@@ -32,7 +32,8 @@ public class BrickCLL : MonoBehaviour
         {
             Instantiate(Bonuses[Random.Range(0, Bonuses.Count - 1)], transform.position, Quaternion.identity).SetBall(ball);                      
         }
-        UILinksManager.Instance.UpdateScore(brickData.Points);
+        GameManager.Instance.Score += brickData.Points;
+        GameManager.Instance.UILinksManager.UpdateScore(GameManager.Instance.Score);
         gameObject.SetActive(false);        
     }
 }

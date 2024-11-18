@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3931ae26c45bdc748b6dad6c43b5caeb, type: 3}
   m_Name: GeneralGameData
   m_EditorClassIdentifier: 
-  SelectedLevelID: 0
+  SelectedLevelID: 1
   BaseScene: {fileID: 102900000, guid: f23323608334d1b4fa4cbe5c4599d8e9, type: 3}
   BaseLevels:
   - ID: 1
-    Score: 0
+    Score: 900
     IsOpen: 1

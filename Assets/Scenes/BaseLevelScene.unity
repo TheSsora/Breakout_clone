@@ -683,7 +683,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.16078432, g: 0.18431373, b: 0.21568628, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -960,6 +960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameData: {fileID: 11400000, guid: fc7818bada428a14fb36d3f5980e57b6, type: 2}
+  platformSprite: {fileID: 326233769}
   Levels:
   - {fileID: 509328895}
 --- !u!1 &1022778869
@@ -1767,11 +1768,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1514039004750075842, guid: 66297e63fb4832a4a9015ba1b17f7dd2, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 1514039004750075842, guid: 66297e63fb4832a4a9015ba1b17f7dd2, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 1514039004750075842, guid: 66297e63fb4832a4a9015ba1b17f7dd2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1820,6 +1821,14 @@ PrefabInstance:
     - target: {fileID: 1514039004750075842, guid: 66297e63fb4832a4a9015ba1b17f7dd2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1687816504363450648, guid: 66297e63fb4832a4a9015ba1b17f7dd2, type: 3}
+      propertyPath: m_text
+      value: "\u0421\u0442\u0430\u0440\u0442"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3569511055576259327, guid: 66297e63fb4832a4a9015ba1b17f7dd2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6536534866300583117, guid: 66297e63fb4832a4a9015ba1b17f7dd2, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.size

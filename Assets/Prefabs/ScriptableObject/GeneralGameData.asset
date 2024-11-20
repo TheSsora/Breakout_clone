@@ -18,3 +18,13 @@ MonoBehaviour:
   - ID: 1
     Score: 900
     IsOpen: 1
+  PlatformSkins:
+  - sprite: {fileID: 21300000, guid: 5655f7f2e45a8854488a0e1098e3c564, type: 3}
+    IsOpen: 1
+    IsSelected: 1
+  - sprite: {fileID: 21300000, guid: 5655f7f2e45a8854488a0e1098e3c564, type: 3}
+    IsOpen: 1
+    IsSelected: 0
+  - sprite: {fileID: 21300000, guid: 5655f7f2e45a8854488a0e1098e3c564, type: 3}
+    IsOpen: 1
+    IsSelected: 0

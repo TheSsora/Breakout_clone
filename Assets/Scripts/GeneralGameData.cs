@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEditor.SearchService;
 using UnityEngine;
@@ -8,10 +9,13 @@ using UnityEngine.SceneManagement;
 [CreateAssetMenu(fileName = "", menuName = "GeneralGameData")]
 public class GeneralGameData : ScriptableObject
 {
-    public int SelectedLevelID;
-
+    [Header("Levels Links")]
+    public int SelectedLevelID;    
     public SceneAsset BaseScene;
     public List<LevelData> BaseLevels;
+
+    [Header("Levels Links")]
+    public List<PlatformSkin> PlatformSkins;
 
     public void LoadScene(int levelID)
     {
@@ -35,5 +39,14 @@ public class GeneralGameData : ScriptableObject
                 if(level.Score < score)
                     level.Score = score;
         }
+    }
+    public void SelectPlatformSkin(int index)
+    {
+        var selected = PlatformSkins.FirstOrDefault(x => x.IsSelected);
+        if (selected != null)
+            selected.IsSelected = false;
+
+        if(PlatformSkins.Count < index)
+            PlatformSkins[index].IsSelected = true;
     }
 }

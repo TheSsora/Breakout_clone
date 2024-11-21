@@ -21,10 +21,10 @@ MonoBehaviour:
   PlatformSkins:
   - sprite: {fileID: 21300000, guid: 5655f7f2e45a8854488a0e1098e3c564, type: 3}
     IsOpen: 1
+    IsSelected: 0
+  - sprite: {fileID: 21300000, guid: 53ff2ad94584f4949b62ccb494099e02, type: 3}
+    IsOpen: 1
     IsSelected: 1
   - sprite: {fileID: 21300000, guid: 5655f7f2e45a8854488a0e1098e3c564, type: 3}
-    IsOpen: 1
-    IsSelected: 0
-  - sprite: {fileID: 21300000, guid: 5655f7f2e45a8854488a0e1098e3c564, type: 3}
-    IsOpen: 1
+    IsOpen: 0
     IsSelected: 0

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class LoseCLL : MonoBehaviour
@@ -7,6 +8,7 @@ public class LoseCLL : MonoBehaviour
     [SerializeField] float BallsCount = 1;
     [SerializeField] float BonusesCount = 0;
     [SerializeField] GameObject GameOverUI;
+    [SerializeField] TextMeshProUGUI GameOverScoreText;
 
     public void CheckLose(float ballLose, float bonusLose)
     {
@@ -29,6 +31,9 @@ public class LoseCLL : MonoBehaviour
     private void GameOver()
     {
         GameOverUI.SetActive(true);
-        GameManager.Instance.GameData.SetScoreByLevelID(GameManager.Instance.GameData.SelectedLevelID, GameManager.Instance.Score);
+        GameOverScoreText.text = GameManager.Instance.Score.ToString();
+
+        if(GameManager.Instance.GameData.GetScoreByLevelID(GameManager.Instance.GameData.SelectedLevelID) < GameManager.Instance.Score)
+            GameManager.Instance.GameData.SetScoreByLevelID(GameManager.Instance.GameData.SelectedLevelID, GameManager.Instance.Score);
     }
 }

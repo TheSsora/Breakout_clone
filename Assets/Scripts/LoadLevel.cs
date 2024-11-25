@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LoadLevel : MonoBehaviour
 {
     [SerializeField] GeneralGameData gameData;
-    [SerializeField] SpriteRenderer platformSprite;
+    [SerializeField] Image platformSprite;
     [SerializeField] List<LevelID> Levels;
 
     private void OnEnable()

@@ -5,7 +5,7 @@ using UnityEngine;
 public class BallCLL : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb;
-    [SerializeField] float speed = 5;
+    [SerializeField] float speed = 3;
     public void AddForce()
     {
         rb.AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * speed, ForceMode2D.Impulse);
@@ -25,7 +25,7 @@ public class BallCLL : MonoBehaviour
         {
             if(rb.velocity.y <= 0.05f || rb.velocity.y >= -0.05f)
             {
-                rb.velocity = new Vector2(rb.velocity.normalized.x, rb.velocity.normalized.y + -0.5f).normalized * speed;
+                rb.velocity = new Vector2(rb.velocity.normalized.x, rb.velocity.normalized.y + -0.25f).normalized * speed;
             }
         }
     }
@@ -36,6 +36,5 @@ public class BallCLL : MonoBehaviour
             GameManager.Instance.LoseCLL.CheckLose(1,0);
             Destroy(gameObject);
         }
-    }
-
+    }   
 }

@@ -7,8 +7,8 @@ public class LoseCLL : MonoBehaviour
 {
     [SerializeField] float BallsCount = 1;
     [SerializeField] float BonusesCount = 0;
-    [SerializeField] GameObject GameOverUI;
-    [SerializeField] TextMeshProUGUI GameOverScoreText;
+    [SerializeField] protected GameObject GameOverUI;
+    [SerializeField] protected TextMeshProUGUI GameOverScoreText;
 
     public void CheckLose(float ballLose, float bonusLose)
     {
@@ -28,7 +28,7 @@ public class LoseCLL : MonoBehaviour
     {
         BonusesCount += value;
     }
-    private void GameOver()
+    protected virtual void GameOver()
     {
         GameOverUI.SetActive(true);
         GameOverScoreText.text = GameManager.Instance.Score.ToString();

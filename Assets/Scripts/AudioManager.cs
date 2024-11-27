@@ -13,6 +13,14 @@ public class AudioManager : MonoBehaviour
         audioSource.clip = audio;
         audioSource.Play();
     }
+    public void Mute(bool turn)
+    {
+        audioSource.mute = turn;
+    }
+    public void Loud(float value)
+    {
+        audioSource.volume = value;
+    }
 
     private void Awake()
     {

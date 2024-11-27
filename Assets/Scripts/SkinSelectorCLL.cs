@@ -31,9 +31,7 @@ public class SkinSelectorCLL : MonoBehaviour, IPointerClickHandler
                 platformSkin.IsSelected = true;
             }
         }
-        transform.parent.GetComponentsInChildren<SkinSelectorCLL>().ToList().ForEach(x => x.UpdateUI());
-        //LayoutRebuilder.ForceRebuildLayoutImmediate(transform.parent.GetComponent<RectTransform>());
-        //UpdateUI();
+        transform.parent.GetComponentsInChildren<SkinSelectorCLL>().ToList().ForEach(x => x.UpdateUI());        
     }    
     private void OnEnable()
     {

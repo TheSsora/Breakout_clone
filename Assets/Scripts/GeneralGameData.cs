@@ -9,18 +9,30 @@ using UnityEngine.SceneManagement;
 [CreateAssetMenu(fileName = "", menuName = "GeneralGameData")]
 public class GeneralGameData : ScriptableObject
 {
-    [Header("Levels Links")]
+    [Header("Level Links")]
     public int SelectedLevelID;    
     public SceneAsset BaseScene;
     public List<LevelData> BaseLevels;
 
-    [Header("Levels Links")]
+    [Header("Infinity Game Links")]
+    public SceneAsset InfinityScene;
+    public int InfinityScore;
+
+    [Header("Skin Links")]
     public List<PlatformSkin> PlatformSkins;
+
+    [Header("Settings")]
+    public bool AudioIsOn;
+    public float AudioLoud;
 
     public void LoadScene(int levelID)
     {
         SelectedLevelID = levelID;
         SceneManager.LoadScene(BaseScene.name, LoadSceneMode.Single);
+    }
+    public void LoadInfinityScene()
+    {
+        SceneManager.LoadScene(InfinityScene.name, LoadSceneMode.Single);
     }
     public int GetScoreByLevelID(int levelID)
     {

@@ -18,6 +18,8 @@ MonoBehaviour:
   - ID: 1
     Score: 20
     IsOpen: 1
+  InfinityScene: {fileID: 102900000, guid: e7af67abb9e9a764cb299772aa1b828c, type: 3}
+  InfinityScore: 0
   PlatformSkins:
   - sprite: {fileID: 21300000, guid: 5655f7f2e45a8854488a0e1098e3c564, type: 3}
     IsOpen: 1

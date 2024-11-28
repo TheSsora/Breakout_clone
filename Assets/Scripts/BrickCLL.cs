@@ -28,12 +28,11 @@ public class BrickCLL : MonoBehaviour
     }
     private void DisableBrick(BallCLL ball)
     {
-        if(Random.Range(0,100) <= 5 && ball != null)
+        if(Random.Range(0,100) <= 1 && ball != null)
         {
             Instantiate(Bonuses[Random.Range(0, Bonuses.Count - 1)], transform.position, Quaternion.identity).SetBall(ball);                      
         }
-        GameManager.Instance.Score += brickData.Points;
-        GameManager.Instance.UILinksManager.UpdateScore(GameManager.Instance.Score);
+        GameManager.Instance.AddScore(brickData.Points);        
         gameObject.SetActive(false);        
     }
 }

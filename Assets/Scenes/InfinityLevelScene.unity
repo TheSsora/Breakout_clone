@@ -19197,6 +19197,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4442588930663713899, guid: 0848c9fbc6ef0db4baeab1a9dcfd9b03, type: 3}
   m_PrefabInstance: {fileID: 785550300}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &786413866 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5866782624421253165, guid: ff720114969a4c343a7aa7f7fb6f2aa6, type: 3}
+  m_PrefabInstance: {fileID: 1819787384}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &787135247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24994,6 +24999,7 @@ GameObject:
   - component: {fileID: 981375575}
   - component: {fileID: 981375578}
   - component: {fileID: 981375577}
+  - component: {fileID: 981375579}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -25090,6 +25096,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameData: {fileID: 11400000, guid: fc7818bada428a14fb36d3f5980e57b6, type: 2}
   platformSprite: {fileID: 326233773}
+--- !u!114 &981375579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981375572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a3904d259eed9243b6cd10a84340191, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bricksParent: {fileID: 786413866}
 --- !u!1001 &983246488
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class BallCLL : MonoBehaviour
     [SerializeField] float speed = 3;
     public void AddForce()
     {
-        rb.AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * speed, ForceMode2D.Impulse);
+        rb.AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(0f, 1f)).normalized * speed, ForceMode2D.Impulse);
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -24,6 +24,13 @@ public class BallCLL : MonoBehaviour
         if(collision.gameObject.layer.Equals(LayerMask.NameToLayer("Wall")))
         {
             if(rb.velocity.y <= 0.05f || rb.velocity.y >= -0.05f)
+            {
+                rb.velocity = new Vector2(rb.velocity.normalized.x, rb.velocity.normalized.y + -0.25f).normalized * speed;
+            }
+        }
+        if (collision.gameObject.layer.Equals(LayerMask.NameToLayer("Brick")))
+        {
+            if (rb.velocity.magnitude < speed)
             {
                 rb.velocity = new Vector2(rb.velocity.normalized.x, rb.velocity.normalized.y + -0.25f).normalized * speed;
             }

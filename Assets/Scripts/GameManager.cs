@@ -20,6 +20,11 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;       
     }
+    public void AddScore(int value)
+    {
+        Score += value;
+        UILinksManager.UpdateScore(Score);
+    }
     public void RestartScene()
     {        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);        

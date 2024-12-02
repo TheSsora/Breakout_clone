@@ -31,9 +31,9 @@ public class LoseCLL : MonoBehaviour
     protected virtual void GameOver()
     {
         GameOverUI.SetActive(true);
-        GameOverScoreText.text = GameManager.Instance.Score.ToString();
+        GameOverScoreText.text = GameManager.Instance.ScoreCLL.GetIntScore().ToString();
 
-        if(GameManager.Instance.GameData.GetScoreByLevelID(GameManager.Instance.GameData.SelectedLevelID) < GameManager.Instance.Score)
-            GameManager.Instance.GameData.SetScoreByLevelID(GameManager.Instance.GameData.SelectedLevelID, GameManager.Instance.Score);
+        if(GameManager.Instance.GameData.GetScoreByLevelID(GameManager.Instance.GameData.SelectedLevelID) < GameManager.Instance.ScoreCLL.GetIntScore())
+            GameManager.Instance.GameData.SetScoreByLevelID(GameManager.Instance.GameData.SelectedLevelID, GameManager.Instance.ScoreCLL.GetIntScore());
     }
 }

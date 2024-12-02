@@ -7,24 +7,18 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {  
-    public static GameManager Instance;
-
-    public int Score;
+    public static GameManager Instance;    
 
     public GeneralGameData GameData;
     [SerializeField] SceneAsset MainScene;
 
     public LoseCLL LoseCLL;
     public UILinksManager UILinksManager;
+    public ScoreCLL ScoreCLL;
     private void Awake()
     {
         Instance = this;       
-    }
-    public void AddScore(int value)
-    {
-        Score += value;
-        UILinksManager.UpdateScore(Score);
-    }
+    }    
     public void RestartScene()
     {        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);        

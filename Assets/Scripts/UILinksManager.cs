@@ -7,9 +7,9 @@ public class UILinksManager : MonoBehaviour
 {    
     [SerializeField] TextMeshProUGUI scoreText;
     
-    public void UpdateScore(int score)
+    public void UpdateScore(float score)
     {
         //Score += score;
-        scoreText.text = score.ToString();
+        scoreText.text = score.ToString("0");
     }    
 }

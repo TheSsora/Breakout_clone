@@ -32,7 +32,7 @@ public class BrickCLL : MonoBehaviour
         {
             Instantiate(Bonuses[Random.Range(0, Bonuses.Count - 1)], transform.position, Quaternion.identity).SetBall(ball);                      
         }
-        GameManager.Instance.AddScore(brickData.Points);        
+        GameManager.Instance.ScoreCLL.AddScore(brickData.Points);        
         gameObject.SetActive(false);        
     }
 }

@@ -16,7 +16,7 @@ public class GeneralGameData : ScriptableObject
 
     [Header("Infinity Game Links")]
     public SceneAsset InfinityScene;
-    public int InfinityScore;
+    public float InfinityScore;
 
     [Header("Skin Links")]
     public List<PlatformSkin> PlatformSkins;
@@ -34,7 +34,7 @@ public class GeneralGameData : ScriptableObject
     {
         SceneManager.LoadScene(InfinityScene.name, LoadSceneMode.Single);
     }
-    public int GetScoreByLevelID(int levelID)
+    public float GetScoreByLevelID(int levelID)
     {
         foreach (LevelData level in BaseLevels)
         {
@@ -43,7 +43,7 @@ public class GeneralGameData : ScriptableObject
         Debug.LogWarning("Level ID not found!");
         return 0;
     }
-    public void SetScoreByLevelID(int levelID, int score)
+    public void SetScoreByLevelID(int levelID, float score)
     {
         foreach (LevelData level in BaseLevels)
         {

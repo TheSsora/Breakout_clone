@@ -7,9 +7,9 @@ public class LoseInfinityCLL : LoseCLL
     protected override void GameOver()
     {
         GameOverUI.SetActive(true);
-        GameOverScoreText.text = GameManager.Instance.Score.ToString();
+        GameOverScoreText.text = GameManager.Instance.ScoreCLL.GetIntScore().ToString("0");
 
-        if (GameManager.Instance.GameData.InfinityScore < GameManager.Instance.Score)
-            GameManager.Instance.GameData.InfinityScore = GameManager.Instance.Score;
+        if (GameManager.Instance.GameData.InfinityScore < GameManager.Instance.ScoreCLL.GetIntScore())
+            GameManager.Instance.GameData.InfinityScore = GameManager.Instance.ScoreCLL.GetIntScore();
     }
 }

@@ -19,6 +19,8 @@ public class ScoreCLL : MonoBehaviour
     {
         Score += value * scoreMultiplier;
         scoreMultiplier += multiplierRise;
+        GameManager.Instance.UILinksManager.UpdateScoreMulti(scoreMultiplier);
+        GameManager.Instance.UILinksManager.SetUpdateBonusTimeLine(timeout);
 
         if (coroutine != null)
         {
@@ -39,6 +41,11 @@ public class ScoreCLL : MonoBehaviour
     {        
         yield return new WaitForSeconds(timeout);
         scoreMultiplier = 1;
-        coroutine = ScoreMultiplierTimeout();        
+        GameManager.Instance.UILinksManager.UpdateScoreMulti(scoreMultiplier);
+        //coroutine = ScoreMultiplierTimeout();        
+    }
+    private void Update()
+    {
+        GameManager.Instance.UILinksManager.UpdateBonusTimeLine();
     }
 }

@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using YG;
 
 [CreateAssetMenu(fileName = "", menuName = "GeneralGameData")]
 public class GeneralGameData : ScriptableObject
@@ -12,14 +10,14 @@ public class GeneralGameData : ScriptableObject
     [Header("Level Links")]
     public int SelectedLevelID;    
     public SceneAsset BaseScene;
-    public List<LevelData> BaseLevels;
+    public LevelsData BaseLevels;
 
     [Header("Infinity Game Links")]
     public SceneAsset InfinityScene;
     public float InfinityScore;
 
     [Header("Skin Links")]
-    public List<PlatformSkin> PlatformSkins;
+    public PlatformSkins PlatformSkins;
 
     [Header("Settings")]
     public bool AudioIsOn;
@@ -36,7 +34,7 @@ public class GeneralGameData : ScriptableObject
     }
     public float GetScoreByLevelID(int levelID)
     {
-        foreach (LevelData level in BaseLevels)
+        foreach (LevelData level in BaseLevels.Levels)
         {
             if(level.ID == levelID) return level.Score;
         }
@@ -45,7 +43,7 @@ public class GeneralGameData : ScriptableObject
     }
     public void SetScoreByLevelID(int levelID, float score)
     {
-        foreach (LevelData level in BaseLevels)
+        foreach (LevelData level in BaseLevels.Levels)
         {
             if (level.ID == levelID)
                 if(level.Score < score)
@@ -54,11 +52,44 @@ public class GeneralGameData : ScriptableObject
     }
     public void SelectPlatformSkin(int index)
     {
-        var selected = PlatformSkins.FirstOrDefault(x => x.IsSelected);
+        var selected = PlatformSkins.skinList.FirstOrDefault(x => x.IsSelected);
         if (selected != null)
             selected.IsSelected = false;
 
-        if(PlatformSkins.Count < index)
-            PlatformSkins[index].IsSelected = true;
+        if(PlatformSkins.skinList.Count < index)
+            PlatformSkins.skinList[index].IsSelected = true;
+    }
+    public void SaveSettings()
+    {
+        YG2.saves.AudioIsOn = AudioIsOn;
+        YG2.saves.AudioLoud = AudioLoud;
+
+        YG2.SaveProgress();
+    }
+    public void SaveSkins()
+    {
+        YG2.saves.PlatformSkins = JsonUtility.ToJson(PlatformSkins);
+
+        YG2.SaveProgress();
+    }
+    public void SaveLevelsData()
+    {
+        YG2.saves.Levels = JsonUtility.ToJson(BaseLevels);
+
+        YG2.SaveProgress();
+    }
+    public void SaveInfinityData()
+    {
+        YG2.saves.InfinityScore = InfinityScore;
+
+        YG2.SaveProgress();
+    }
+    public void LoadData()
+    {
+        JsonUtility.FromJsonOverwrite(YG2.saves.PlatformSkins, PlatformSkins);
+        JsonUtility.FromJsonOverwrite(YG2.saves.Levels, BaseLevels);
+        InfinityScore = YG2.saves.InfinityScore;
+        AudioIsOn = YG2.saves.AudioIsOn;
+        AudioLoud = YG2.saves.AudioLoud;
     }
 }

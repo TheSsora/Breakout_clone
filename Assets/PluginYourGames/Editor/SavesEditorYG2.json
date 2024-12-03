@@ -1,0 +1,8 @@
+{
+    "idSave": 14,
+    "Levels": "{\"Levels\":[{\"ID\":1,\"Score\":170.0,\"IsOpen\":true},{\"ID\":2,\"Score\":0.0,\"IsOpen\":false},{\"ID\":3,\"Score\":0.0,\"IsOpen\":false}]}",
+    "InfinityScore": 40.0,
+    "PlatformSkins": "{\"skinList\":[{\"sprite\":{\"instanceID\":25264},\"IsOpen\":true,\"IsSelected\":true},{\"sprite\":{\"instanceID\":25258},\"IsOpen\":true,\"IsSelected\":false},{\"sprite\":{\"instanceID\":25264},\"IsOpen\":false,\"IsSelected\":false}]}",
+    "AudioIsOn": true,
+    "AudioLoud": 1.0
+}

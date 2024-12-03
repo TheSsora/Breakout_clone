@@ -10,3 +10,8 @@ public class LevelData
     public float Score;
     public bool IsOpen;
 }
+[Serializable]
+public class LevelsData
+{
+    public List<LevelData> Levels;
+}

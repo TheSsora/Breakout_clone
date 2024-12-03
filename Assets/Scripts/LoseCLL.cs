@@ -33,7 +33,6 @@ public class LoseCLL : MonoBehaviour
         GameOverUI.SetActive(true);
         GameOverScoreText.text = GameManager.Instance.ScoreCLL.GetIntScore().ToString();
 
-        if(GameManager.Instance.GameData.GetScoreByLevelID(GameManager.Instance.GameData.SelectedLevelID) < GameManager.Instance.ScoreCLL.GetIntScore())
-            GameManager.Instance.GameData.SetScoreByLevelID(GameManager.Instance.GameData.SelectedLevelID, GameManager.Instance.ScoreCLL.GetIntScore());
+        GameManager.Instance.ScoreCLL.SaveLevelScoreIfBetter();
     }
 }

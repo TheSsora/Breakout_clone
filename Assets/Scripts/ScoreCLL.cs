@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
+using YG;
 
 public class ScoreCLL : MonoBehaviour
 {
@@ -36,6 +37,22 @@ public class ScoreCLL : MonoBehaviour
     public int GetIntScore()
     {
         return (int)Score;
+    }
+    public void SaveLevelScoreIfBetter()
+    {
+        if (GameManager.Instance.GameData.GetScoreByLevelID(GameManager.Instance.GameData.SelectedLevelID) < GetIntScore())
+        {
+            GameManager.Instance.GameData.SetScoreByLevelID(GameManager.Instance.GameData.SelectedLevelID, GetIntScore());
+            GameManager.Instance.GameData.SaveLevelsData();
+        }                 
+    }
+    public void SaveInfinityScoreIfBetter()
+    {
+        if (GameManager.Instance.GameData.InfinityScore < GetIntScore())
+        {
+            GameManager.Instance.GameData.InfinityScore = GetIntScore();
+            GameManager.Instance.GameData.SaveInfinityData();
+        }                   
     }
     IEnumerator ScoreMultiplierTimeout()
     {        

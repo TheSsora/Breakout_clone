@@ -26,7 +26,7 @@ public class SkinSelectorCLL : MonoBehaviour, IPointerClickHandler
         {
             if(platformSkin.IsOpen && !platformSkin.IsSelected)
             {
-                gameData.PlatformSkins.FirstOrDefault(x => x.IsSelected).IsSelected = false;
+                gameData.PlatformSkins.skinList.FirstOrDefault(x => x.IsSelected).IsSelected = false;
 
                 platformSkin.IsSelected = true;
             }
@@ -35,18 +35,18 @@ public class SkinSelectorCLL : MonoBehaviour, IPointerClickHandler
     }    
     private void OnEnable()
     {
-        if (ID < gameData.PlatformSkins.Count)
+        if (ID < gameData.PlatformSkins.skinList.Count)
         {
-            platformSkin = gameData.PlatformSkins[ID];            
+            platformSkin = gameData.PlatformSkins.skinList[ID];            
         }
 
         UpdateUI();
     }    
     private void OnValidate()
     {
-        if(ID < gameData.PlatformSkins.Count)
+        if(ID < gameData.PlatformSkins.skinList.Count)
         {
-            platformSkin = gameData.PlatformSkins[ID];            
+            platformSkin = gameData.PlatformSkins.skinList[ID];            
         }
 
         UpdateUI();

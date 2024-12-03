@@ -15,18 +15,28 @@ MonoBehaviour:
   SelectedLevelID: 1
   BaseScene: {fileID: 102900000, guid: f23323608334d1b4fa4cbe5c4599d8e9, type: 3}
   BaseLevels:
-  - ID: 1
-    Score: 20
-    IsOpen: 1
+    Levels:
+    - ID: 1
+      Score: 170
+      IsOpen: 1
+    - ID: 2
+      Score: 0
+      IsOpen: 0
+    - ID: 3
+      Score: 0
+      IsOpen: 0
   InfinityScene: {fileID: 102900000, guid: e7af67abb9e9a764cb299772aa1b828c, type: 3}
-  InfinityScore: 0
+  InfinityScore: 40
   PlatformSkins:
-  - sprite: {fileID: 21300000, guid: 5655f7f2e45a8854488a0e1098e3c564, type: 3}
-    IsOpen: 1
-    IsSelected: 1
-  - sprite: {fileID: 21300000, guid: 53ff2ad94584f4949b62ccb494099e02, type: 3}
-    IsOpen: 1
-    IsSelected: 0
-  - sprite: {fileID: 21300000, guid: 5655f7f2e45a8854488a0e1098e3c564, type: 3}
-    IsOpen: 0
-    IsSelected: 0
+    skinList:
+    - sprite: {fileID: 21300000, guid: 5655f7f2e45a8854488a0e1098e3c564, type: 3}
+      IsOpen: 1
+      IsSelected: 1
+    - sprite: {fileID: 21300000, guid: 53ff2ad94584f4949b62ccb494099e02, type: 3}
+      IsOpen: 1
+      IsSelected: 0
+    - sprite: {fileID: 21300000, guid: 5655f7f2e45a8854488a0e1098e3c564, type: 3}
+      IsOpen: 0
+      IsSelected: 0
+  AudioIsOn: 1
+  AudioLoud: 1

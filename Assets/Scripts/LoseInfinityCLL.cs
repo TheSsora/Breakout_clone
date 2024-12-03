@@ -9,7 +9,6 @@ public class LoseInfinityCLL : LoseCLL
         GameOverUI.SetActive(true);
         GameOverScoreText.text = GameManager.Instance.ScoreCLL.GetIntScore().ToString("0");
 
-        if (GameManager.Instance.GameData.InfinityScore < GameManager.Instance.ScoreCLL.GetIntScore())
-            GameManager.Instance.GameData.InfinityScore = GameManager.Instance.ScoreCLL.GetIntScore();
+        GameManager.Instance.ScoreCLL.SaveInfinityScoreIfBetter();
     }
 }

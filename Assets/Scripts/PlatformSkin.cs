@@ -10,3 +10,8 @@ public class PlatformSkin
     public bool IsOpen;
     public bool IsSelected;
 }
+[Serializable]
+public class PlatformSkins
+{
+    public List<PlatformSkin> skinList;
+}

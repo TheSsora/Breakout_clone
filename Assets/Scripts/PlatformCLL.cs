@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using YG;
 
 public class PlatformCLL : MonoBehaviour
 { 
@@ -11,9 +12,9 @@ public class PlatformCLL : MonoBehaviour
 
     void Start()
     {
-#if UNITY_EDITOR || UNITY_STANDALONE
-        isPC = true;
-#endif
+//#if UNITY_EDITOR || UNITY_STANDALONE
+//        isPC = true;
+//#endif
         // Определяем половину экрана в мировых единицах для ограничения движения
         float halfPaddleWidth = transform.localScale.x / 2f;
         screenHalfWidthInWorldUnits = Camera.main.aspect * Camera.main.orthographicSize - halfPaddleWidth;
@@ -21,7 +22,7 @@ public class PlatformCLL : MonoBehaviour
 
     void Update()
     {
-        if(isPC)
+        if(YG2.envir.isDesktop)
         {
             HandlePCControls();
         }

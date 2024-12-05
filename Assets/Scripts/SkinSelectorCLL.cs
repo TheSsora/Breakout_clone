@@ -56,7 +56,7 @@ public class SkinSelectorCLL : MonoBehaviour, IPointerClickHandler
     {        
         if(platformSkin != null)
         {
-            skinSprite.sprite = platformSkin.sprite;
+            skinSprite.sprite = platformSkin.GetSprite();
             closedTexture.gameObject.SetActive(!platformSkin.IsOpen);
             if(platformSkin.IsSelected)
             {

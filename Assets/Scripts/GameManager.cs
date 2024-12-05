@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;    
 
     public GeneralGameData GameData;
-    [SerializeField] SceneAsset MainScene;
+    [SerializeField] string MainScene;
 
     public LoseCLL LoseCLL;
     public UILinksManager UILinksManager;
@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     }    
     public void Exit()
     {        
-        SceneManager.LoadScene(MainScene.name, LoadSceneMode.Single);
+        SceneManager.LoadScene(MainScene, LoadSceneMode.Single);
     }
     public void Pause(bool turn)
     {

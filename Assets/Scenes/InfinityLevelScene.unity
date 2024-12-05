@@ -24170,7 +24170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameData: {fileID: 11400000, guid: fc7818bada428a14fb36d3f5980e57b6, type: 2}
-  MainScene: {fileID: 102900000, guid: fc51cebe255f058419f34e39dbfd1f52, type: 3}
+  MainScene: MainScene
   LoseCLL: {fileID: 981375577}
   UILinksManager: {fileID: 981375575}
   ScoreCLL: {fileID: 981375580}
@@ -54810,6 +54810,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 874630356939863704, guid: d052da13bba51d544aa48418e7d7bb23, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 874630356939863704, guid: d052da13bba51d544aa48418e7d7bb23, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 874630356939863704, guid: d052da13bba51d544aa48418e7d7bb23, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 874630356939863704, guid: d052da13bba51d544aa48418e7d7bb23, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 874630356939863704, guid: d052da13bba51d544aa48418e7d7bb23, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 874630356939863704, guid: d052da13bba51d544aa48418e7d7bb23, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1110982761270484598, guid: d052da13bba51d544aa48418e7d7bb23, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -54918,6 +54942,30 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 981375576}
+    - target: {fileID: 5998232243699972738, guid: d052da13bba51d544aa48418e7d7bb23, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5998232243699972738, guid: d052da13bba51d544aa48418e7d7bb23, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5998232243699972738, guid: d052da13bba51d544aa48418e7d7bb23, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5998232243699972738, guid: d052da13bba51d544aa48418e7d7bb23, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5998232243699972738, guid: d052da13bba51d544aa48418e7d7bb23, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5998232243699972738, guid: d052da13bba51d544aa48418e7d7bb23, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6065115365080866426, guid: d052da13bba51d544aa48418e7d7bb23, type: 3}
       propertyPath: m_Name
       value: PauseButton

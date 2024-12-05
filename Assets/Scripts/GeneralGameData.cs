@@ -9,11 +9,11 @@ public class GeneralGameData : ScriptableObject
 {
     [Header("Level Links")]
     public int SelectedLevelID;    
-    public SceneAsset BaseScene;
+    public string BaseScene;
     public LevelsData BaseLevels;
 
     [Header("Infinity Game Links")]
-    public SceneAsset InfinityScene;
+    public string InfinityScene;
     public float InfinityScore;
 
     [Header("Skin Links")]
@@ -26,11 +26,11 @@ public class GeneralGameData : ScriptableObject
     public void LoadScene(int levelID)
     {
         SelectedLevelID = levelID;
-        SceneManager.LoadScene(BaseScene.name, LoadSceneMode.Single);
+        SceneManager.LoadScene(BaseScene, LoadSceneMode.Single);
     }
     public void LoadInfinityScene()
     {
-        SceneManager.LoadScene(InfinityScene.name, LoadSceneMode.Single);
+        SceneManager.LoadScene(InfinityScene, LoadSceneMode.Single);
     }
     public float GetScoreByLevelID(int levelID)
     {

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GeneralGameData
   m_EditorClassIdentifier: 
   SelectedLevelID: 1
-  BaseScene: {fileID: 102900000, guid: f23323608334d1b4fa4cbe5c4599d8e9, type: 3}
+  BaseScene: BaseLevelScene
   BaseLevels:
     Levels:
     - ID: 1
@@ -25,16 +25,16 @@ MonoBehaviour:
     - ID: 3
       Score: 0
       IsOpen: 0
-  InfinityScene: {fileID: 102900000, guid: e7af67abb9e9a764cb299772aa1b828c, type: 3}
-  InfinityScore: 40
+  InfinityScene: InfinityLevelScene
+  InfinityScore: 203
   PlatformSkins:
     skinList:
     - sprite: {fileID: 21300000, guid: 5655f7f2e45a8854488a0e1098e3c564, type: 3}
       IsOpen: 1
-      IsSelected: 1
+      IsSelected: 0
     - sprite: {fileID: 21300000, guid: 53ff2ad94584f4949b62ccb494099e02, type: 3}
       IsOpen: 1
-      IsSelected: 0
+      IsSelected: 1
     - sprite: {fileID: 21300000, guid: 5655f7f2e45a8854488a0e1098e3c564, type: 3}
       IsOpen: 0
       IsSelected: 0

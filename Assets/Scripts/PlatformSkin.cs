@@ -6,9 +6,11 @@ using UnityEngine;
 [Serializable]
 public class PlatformSkin
 {
-    public Sprite sprite;
+    [SerializeField] Sprite sprite;
     public bool IsOpen;
     public bool IsSelected;
+
+    public Sprite GetSprite() { return sprite; }
 }
 [Serializable]
 public class PlatformSkins

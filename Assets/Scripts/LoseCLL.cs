@@ -34,5 +34,7 @@ public class LoseCLL : MonoBehaviour
         GameOverScoreText.text = GameManager.Instance.ScoreCLL.GetIntScore().ToString();
 
         GameManager.Instance.ScoreCLL.SaveLevelScoreIfBetter();
+
+        Time.timeScale = 0;
     }
 }

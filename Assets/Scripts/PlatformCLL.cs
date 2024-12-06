@@ -22,65 +22,40 @@ public class PlatformCLL : MonoBehaviour
 
     void Update()
     {
-        if(YG2.envir.isDesktop)
+        if (YG2.envir.isDesktop)
         {
-            HandlePCControls();
+            if (Input.GetMouseButton(0))
+            {
+                HandleControls(Input.mousePosition);
+            }
         }
         else
         {
-            HandleMobileControls();
+            if (Input.touchCount > 0)
+            {
+                HandleControls(Input.GetTouch(0).position);
+            }
         }
-
+        
         // Ограничение платформы в пределах экрана
         float clampedX = Mathf.Clamp(transform.position.x, -screenHalfWidthInWorldUnits + transform.localScale.x, screenHalfWidthInWorldUnits - transform.localScale.x);
         transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);
     }
 
-    void HandlePCControls()
+    void HandleControls(Vector3 position)
     {
-        //Управление с помощью стрелок или клавиш A / D
-        float horizontalInput;// = Input.GetAxis("Horizontal"); // возвращает значение от -1 до 1
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            horizontalInput = -1;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            horizontalInput = 1;
-        }
-        else { horizontalInput = 0; }
-        
-        transform.Translate(Vector2.right * horizontalInput * speed * Time.deltaTime);
-
-        // Управление с помощью мыши
-        //if (Input.GetMouseButton(0)) // если левая кнопка мыши нажата
-        //{
-        //    float mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition).normalized.x;
-
-        //    if(mousePos != 0)
-        //    {
-        //        mousePos = mousePos > 0 ? 1 : -1;
-        //    }
-        //    //transform.position = new Vector3(mousePos.x, transform.position.y, transform.position.z);
-        //    transform.Translate(Vector2.right * mousePos * speed * Time.deltaTime);
-        //}
+        Vector3 mousePos = new Vector3(Camera.main.ScreenToWorldPoint(position).x, transform.position.y, transform.position.z);
+        transform.position = Vector3.Lerp(transform.position, mousePos, speed * Time.deltaTime);
     }
 
-    void HandleMobileControls()
-    {
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0); // Обрабатываем первый палец
-            float touchPosition = Camera.main.ScreenToWorldPoint(touch.position).normalized.x;
+    //void HandleMobileControls()
+    //{
+    //    if (Input.touchCount > 0)
+    //    {            
+    //        Vector3 touchPosition;            
 
-            if(touchPosition != 0)
-            {
-                touchPosition = touchPosition > 0 ? 1 : -1;
-            }
-            // Перемещаем платформу на горизонтальной оси к позиции касания
-            //transform.position = new Vector3(touchPosition.x, transform.position.y, transform.position.z);
-            transform.Translate(Vector2.right * touchPosition * speed * Time.deltaTime);
-        }
-    }   
+    //        touchPosition = new Vector3(Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position).x, transform.position.y, transform.position.z); ;
+    //        transform.position = Vector3.Lerp(transform.position, touchPosition, speed * Time.deltaTime);
+    //    }
+    //}   
 }

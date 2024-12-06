@@ -1,7 +1,7 @@
 {
-    "idSave": 22,
-    "Levels": "{\"Levels\":[{\"ID\":1,\"Score\":170.0,\"IsOpen\":true},{\"ID\":2,\"Score\":0.0,\"IsOpen\":false},{\"ID\":3,\"Score\":0.0,\"IsOpen\":false}]}",
-    "InfinityScore": 203.0,
+    "idSave": 29,
+    "Levels": "{\"Levels\":[{\"ID\":1,\"Score\":250.0,\"IsOpen\":true},{\"ID\":2,\"Score\":0.0,\"IsOpen\":false},{\"ID\":3,\"Score\":0.0,\"IsOpen\":false}]}",
+    "InfinityScore": 1965.0,
     "PlatformSkins": "{\"skinList\":[{\"sprite\":{\"instanceID\":25566},\"IsOpen\":true,\"IsSelected\":false},{\"sprite\":{\"instanceID\":25560},\"IsOpen\":true,\"IsSelected\":true},{\"sprite\":{\"instanceID\":25566},\"IsOpen\":false,\"IsSelected\":false}]}",
     "AudioIsOn": true,
     "AudioLoud": 1.0

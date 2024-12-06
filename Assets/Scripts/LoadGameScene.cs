@@ -12,5 +12,7 @@ public class LoadGameScene : MonoBehaviour
     protected virtual void OnEnable()
     {
         platformSprite.sprite = gameData.PlatformSkins.skinList.FirstOrDefault(x => x.IsSelected)?.GetSprite();
+
+        Time.timeScale = 0;
     }
 }

@@ -20,12 +20,16 @@ public class BallCLL : MonoBehaviour
             // ѕримен€ем отскок в зависимости от точки контакта
             Vector2 direction = new Vector2(hitPoint, 1).normalized;
             rb.velocity = direction * speed;
-        }       
-        if(collision.gameObject.layer.Equals(LayerMask.NameToLayer("Wall")))
+        }
+        if (collision.gameObject.layer.Equals(LayerMask.NameToLayer("Wall")))
         {
-            if(rb.velocity.y <= 0.05f || rb.velocity.y >= -0.05f)
+            if (rb.velocity.y <= 0.05f || rb.velocity.y >= -0.05f)
             {
-                rb.velocity = new Vector2(rb.velocity.normalized.x, rb.velocity.normalized.y + -0.25f).normalized * speed;
+                rb.velocity = new Vector2(rb.velocity.normalized.x, rb.velocity.normalized.y + -0.2f).normalized * speed;
+            }
+            if (rb.velocity.normalized.y >= 0.95f)
+            {
+                rb.velocity = new Vector2(-rb.velocity.normalized.x + 0.3f, rb.velocity.normalized.y - 0.3f).normalized * speed;
             }
         }
         if (collision.gameObject.layer.Equals(LayerMask.NameToLayer("Brick")))
@@ -35,6 +39,10 @@ public class BallCLL : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.normalized.x, rb.velocity.normalized.y + -0.25f).normalized * speed;
             }
         }
+        if (rb.velocity.magnitude < speed || rb.velocity.magnitude > speed)
+        {
+            rb.velocity = rb.velocity.normalized * speed;
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -43,5 +51,9 @@ public class BallCLL : MonoBehaviour
             GameManager.Instance.LoseCLL.CheckLose(1,0);
             Destroy(gameObject);
         }
-    }   
+    }
+    private void Update()
+    {
+        Debug.Log(rb.velocity.magnitude);
+    }
 }

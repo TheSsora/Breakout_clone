@@ -21,8 +21,9 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);        
     }    
     public void Exit()
-    {        
-        SceneManager.LoadScene(MainScene, LoadSceneMode.Single);
+    {
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene(MainScene, LoadSceneMode.Single);        
     }
     public void Pause(bool turn)
     {

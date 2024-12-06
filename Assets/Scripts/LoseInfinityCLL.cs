@@ -10,5 +10,7 @@ public class LoseInfinityCLL : LoseCLL
         GameOverScoreText.text = GameManager.Instance.ScoreCLL.GetIntScore().ToString("0");
 
         GameManager.Instance.ScoreCLL.SaveInfinityScoreIfBetter();
+
+        Time.timeScale = 0;
     }
 }

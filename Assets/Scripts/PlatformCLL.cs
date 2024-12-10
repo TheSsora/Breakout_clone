@@ -1,20 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 using YG;
 
 public class PlatformCLL : MonoBehaviour
 { 
     public float speed = 10f;
-    private float screenHalfWidthInWorldUnits;
-
-    private bool isPC = false;
-
+    private float screenHalfWidthInWorldUnits;    
     void Start()
     {
-//#if UNITY_EDITOR || UNITY_STANDALONE
-//        isPC = true;
-//#endif
         // Определяем половину экрана в мировых единицах для ограничения движения
         float halfPaddleWidth = transform.localScale.x / 2f;
         screenHalfWidthInWorldUnits = Camera.main.aspect * Camera.main.orthographicSize - halfPaddleWidth;
@@ -24,38 +19,37 @@ public class PlatformCLL : MonoBehaviour
     {
         if (YG2.envir.isDesktop)
         {
-            if (Input.GetMouseButton(0))
-            {
-                HandleControls(Input.mousePosition);
-            }
+            MovePlatform(new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, transform.position.y, transform.position.z));
         }
         else
         {
             if (Input.touchCount > 0)
             {
-                HandleControls(Input.GetTouch(0).position);
+                foreach (Touch touch in Input.touches)
+                {
+                    // Определяем, куда касается игрок
+                    if (touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved)
+                    {
+                        if (touch.position.x < Screen.width / 2) // Левая половина экрана
+                        {
+                            MovePlatform(transform.position + Vector3.right * -1); // Двигаем платформу влево
+                        }
+                        else if (touch.position.x > Screen.width / 2) // Правая половина экрана
+                        {
+                            MovePlatform(transform.position + Vector3.right * 1); // Двигаем платформу вправо
+                        }
+                    }
+                }
             }
         }
         
         // Ограничение платформы в пределах экрана
+        
+    }       
+    void MovePlatform(Vector3 targetPosition)
+    {
+        transform.position = Vector3.Lerp(transform.position, targetPosition, speed * Time.deltaTime);
         float clampedX = Mathf.Clamp(transform.position.x, -screenHalfWidthInWorldUnits + transform.localScale.x, screenHalfWidthInWorldUnits - transform.localScale.x);
         transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);
-    }
-
-    void HandleControls(Vector3 position)
-    {
-        Vector3 mousePos = new Vector3(Camera.main.ScreenToWorldPoint(position).x, transform.position.y, transform.position.z);
-        transform.position = Vector3.Lerp(transform.position, mousePos, speed * Time.deltaTime);
-    }
-
-    //void HandleMobileControls()
-    //{
-    //    if (Input.touchCount > 0)
-    //    {            
-    //        Vector3 touchPosition;            
-
-    //        touchPosition = new Vector3(Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position).x, transform.position.y, transform.position.z); ;
-    //        transform.position = Vector3.Lerp(transform.position, touchPosition, speed * Time.deltaTime);
-    //    }
-    //}   
+    }    
 }

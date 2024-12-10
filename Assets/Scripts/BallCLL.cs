@@ -51,9 +51,5 @@ public class BallCLL : MonoBehaviour
             GameManager.Instance.LoseCLL.CheckLose(1,0);
             Destroy(gameObject);
         }
-    }
-    private void Update()
-    {
-        Debug.Log(rb.velocity.magnitude);
-    }
+    }    
 }

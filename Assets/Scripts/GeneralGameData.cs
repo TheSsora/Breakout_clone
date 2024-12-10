@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
@@ -68,7 +69,7 @@ public class GeneralGameData : ScriptableObject
     }
     public void SaveSkins()
     {
-        YG2.saves.PlatformSkins = JsonUtility.ToJson(PlatformSkins);
+        YG2.saves.PlatformSkins = JsonConvert.SerializeObject(PlatformSkins);
 
         YG2.SaveProgress();
     }

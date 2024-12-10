@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using UnityEngine;
 [Serializable]
 public class PlatformSkin
 {
-    [SerializeField] Sprite sprite;
+    [JsonIgnore] public Sprite sprite;
     public bool IsOpen;
     public bool IsSelected;
 

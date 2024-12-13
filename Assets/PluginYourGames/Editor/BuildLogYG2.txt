@@ -1,3 +1,0 @@
-Build path: W:/Unity/ProjectBuilds/BreakOut
-Build number: 8
-PluginYG version: 2.001

@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class LoseInfinityCLL : LoseCLL
 {
+    protected override void OnEnable()
+    {
+        
+    }
+    public override void DisableBrick()
+    {
+        
+    }
     protected override void GameOver()
     {
         GameOverUI.SetActive(true);

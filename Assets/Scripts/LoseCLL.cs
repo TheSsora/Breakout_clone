@@ -5,11 +5,21 @@ using UnityEngine;
 
 public class LoseCLL : MonoBehaviour
 {
+    [SerializeField] private GameObject BricksParent;
+    [SerializeField] private float BricksCount;
     [SerializeField] float BallsCount = 1;
     [SerializeField] float BonusesCount = 0;
     [SerializeField] protected GameObject GameOverUI;
     [SerializeField] protected TextMeshProUGUI GameOverScoreText;
 
+    protected virtual void OnEnable()
+    {
+        BricksCount = BricksParent.transform.childCount;
+    }
+    public float GetBallsCount()
+    {
+        return BallsCount;
+    }
     public void CheckLose(float ballLose, float bonusLose)
     {
         BallsCount -= ballLose;
@@ -27,6 +37,14 @@ public class LoseCLL : MonoBehaviour
     public void AddBonus(float value)
     {
         BonusesCount += value;
+    }
+    public virtual void DisableBrick()
+    {
+        BricksCount--;
+        if(BricksCount <= 0)
+        {
+            GameOver();
+        }
     }
     protected virtual void GameOver()
     {

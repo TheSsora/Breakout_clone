@@ -10,8 +10,7 @@ using UnityEngine.UI;
 public class SkinSelectorCLL : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] int ID;
-    [SerializeField] GeneralGameData gameData;
-    [SerializeField] Image skinSprite;
+    [SerializeField] GeneralGameData gameData;    
     [SerializeField] Image closedTexture;
 
     [SerializeField] Image iconUI;
@@ -55,8 +54,7 @@ public class SkinSelectorCLL : MonoBehaviour, IPointerClickHandler
     public void UpdateUI()
     {        
         if(platformSkin != null)
-        {
-            skinSprite.sprite = platformSkin.GetSprite();
+        {            
             closedTexture.gameObject.SetActive(!platformSkin.IsOpen);
             if(platformSkin.IsSelected)
             {

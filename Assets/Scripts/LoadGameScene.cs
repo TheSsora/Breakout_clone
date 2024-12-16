@@ -7,11 +7,11 @@ using UnityEngine.UI;
 public class LoadGameScene : MonoBehaviour
 {
     [SerializeField] protected GeneralGameData gameData;
-    [SerializeField] Image platformSprite;
+    [SerializeField] GameObject platform;
     
     protected virtual void OnEnable()
     {
-        platformSprite.sprite = gameData.PlatformSkins.skinList.FirstOrDefault(x => x.IsSelected)?.GetSprite();
+        platform.transform.GetChild(gameData.PlatformSkins.skinList.FindIndex(x => x.IsSelected)).gameObject.SetActive(true);        
 
         Time.timeScale = 0;
     }

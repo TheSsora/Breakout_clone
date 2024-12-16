@@ -1,6 +1,6 @@
 {
-    "idSave": 4,
-    "Levels": "",
+    "idSave": 22,
+    "Levels": "{\"Levels\":[{\"ID\":1,\"Score\":4117.0,\"IsOpen\":true},{\"ID\":2,\"Score\":0.0,\"IsOpen\":false},{\"ID\":3,\"Score\":0.0,\"IsOpen\":false}]}",
     "InfinityScore": 1393891.0,
     "PlatformSkins": "{\"skinList\":[{\"IsOpen\":true,\"IsSelected\":false},{\"IsOpen\":true,\"IsSelected\":true},{\"IsOpen\":false,\"IsSelected\":false}]}",
     "AudioIsOn": true,

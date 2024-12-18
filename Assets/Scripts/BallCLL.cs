@@ -34,9 +34,13 @@ public class BallCLL : MonoBehaviour
         }
         if (collision.gameObject.layer.Equals(LayerMask.NameToLayer("Brick")))
         {
-            if (rb.velocity.magnitude < speed)
+            if (rb.velocity.normalized.y >= 0.95f)
             {
-                rb.velocity = new Vector2(rb.velocity.normalized.x, rb.velocity.normalized.y + -0.25f).normalized * speed;
+                rb.velocity = new Vector2(-rb.velocity.normalized.x + 0.2f, rb.velocity.normalized.y - 0.2f).normalized * speed;
+            }
+            else if(rb.velocity.normalized.x >= 0.95f)
+            {
+                rb.velocity = new Vector2(rb.velocity.normalized.x - 0.2f, rb.velocity.normalized.y + 0.2f).normalized * speed;
             }
         }
         if (rb.velocity.magnitude < speed || rb.velocity.magnitude > speed)

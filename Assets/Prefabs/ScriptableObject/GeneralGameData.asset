@@ -12,19 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3931ae26c45bdc748b6dad6c43b5caeb, type: 3}
   m_Name: GeneralGameData
   m_EditorClassIdentifier: 
-  SelectedLevelID: 1
+  SelectedLevelID: 2
   BaseScene: BaseLevelScene
   BaseLevels:
     Levels:
     - ID: 1
-      Score: 250
+      Score: 0
       IsOpen: 1
+      OpenScore: 0
     - ID: 2
       Score: 0
       IsOpen: 0
+      OpenScore: 3600
     - ID: 3
       Score: 0
       IsOpen: 0
+      OpenScore: 1
   InfinityScene: InfinityLevelScene
   InfinityScore: 20
   PlatformSkins:

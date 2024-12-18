@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ public class LevelData
     public int ID;
     public float Score;
     public bool IsOpen;
+    [JsonIgnore] public float OpenScore;
 }
 [Serializable]
 public class LevelsData

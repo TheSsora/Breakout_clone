@@ -51,6 +51,17 @@ public class GeneralGameData : ScriptableObject
                     level.Score = score;
         }
     }
+    public LevelData GetLevelDataByID(int ID)
+    {
+        foreach(LevelData level in BaseLevels.Levels)
+        {
+            if(level.ID == ID)
+            {
+                return level;
+            }            
+        }
+        return null;
+    }
     public void SelectPlatformSkin(int index)
     {
         var selected = PlatformSkins.skinList.FirstOrDefault(x => x.IsSelected);
@@ -75,7 +86,7 @@ public class GeneralGameData : ScriptableObject
     }
     public void SaveLevelsData()
     {
-        YG2.saves.Levels = JsonUtility.ToJson(BaseLevels);
+        YG2.saves.Levels = JsonConvert.SerializeObject(BaseLevels);
 
         YG2.SaveProgress();
     }
@@ -92,5 +103,15 @@ public class GeneralGameData : ScriptableObject
         InfinityScore = YG2.saves.InfinityScore;
         AudioIsOn = YG2.saves.AudioIsOn;
         AudioLoud = YG2.saves.AudioLoud;
+    }
+    public void UpdateLevels()
+    {
+        foreach(var level in BaseLevels.Levels)
+        {
+            if (level.ID != 1 && level.OpenScore <= GetScoreByLevelID(level.ID - 1))
+            {
+                level.IsOpen = true;
+            }
+        }
     }
 }

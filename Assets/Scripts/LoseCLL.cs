@@ -13,9 +13,8 @@ public class LoseCLL : MonoBehaviour
     [SerializeField] float BonusesCount = 0;
     [SerializeField] protected GameObject GameOverUI;
     [SerializeField] protected TextMeshProUGUI GameOverScoreText;
-
-    private int DebugCOunter = 0;
-    protected virtual void OnEnable()
+    
+    public void LoadBricksCount()
     {        
         BricksParent = Levels.GetComponentsInChildren<Transform>().FirstOrDefault(x => x.gameObject.activeInHierarchy)?.gameObject;
         BricksCount = BricksParent.GetComponentsInChildren<BrickCLL>().ToList().Where(x => x.brickData.IsDestroyable).Count();
@@ -43,9 +42,7 @@ public class LoseCLL : MonoBehaviour
         BonusesCount += value;
     }
     public virtual void DisableBrick()
-    {
-        Debug.Log(DebugCOunter + " " + BricksCount);
-        DebugCOunter++;
+    {                
         BricksCount--;
         if(BricksCount <= 0)
         {

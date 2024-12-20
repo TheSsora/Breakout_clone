@@ -19,5 +19,7 @@ public class LoadLevel : LoadGameScene
                 break;
             }
         }        
+
+        GameManager.Instance.LoseCLL.LoadBricksCount();
     }
 }

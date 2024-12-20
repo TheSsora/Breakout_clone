@@ -21,15 +21,15 @@ MonoBehaviour:
       IsOpen: 1
       OpenScore: 0
     - ID: 2
-      Score: 0
-      IsOpen: 0
+      Score: 21807
+      IsOpen: 1
       OpenScore: 3600
     - ID: 3
       Score: 0
-      IsOpen: 0
+      IsOpen: 1
       OpenScore: 1
   InfinityScene: InfinityLevelScene
-  InfinityScore: 20
+  InfinityScore: 90
   PlatformSkins:
     skinList:
     - sprite: {fileID: 21300000, guid: 5655f7f2e45a8854488a0e1098e3c564, type: 3}

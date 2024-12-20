@@ -8,6 +8,7 @@ public class BrickCLL : MonoBehaviour
     [SerializeField] List<BonusCLL> Bonuses;
 
     private float destroyCount;
+    private bool disabling = false;
     private void OnEnable()
     {
         destroyCount = brickData.DestroyCount;
@@ -16,8 +17,9 @@ public class BrickCLL : MonoBehaviour
     {
         if(brickData.IsDestroyable)
         {
-            if(destroyCount == 0)
+            if(destroyCount == 0 && !disabling)
             {
+                disabling = true;
                 DisableBrick(collision.gameObject.GetComponent<BallCLL>());
             }
             else

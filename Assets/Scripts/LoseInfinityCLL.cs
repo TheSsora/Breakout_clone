@@ -3,11 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LoseInfinityCLL : LoseCLL
-{
-    protected override void OnEnable()
-    {
-        
-    }
+{    
     public override void DisableBrick()
     {
         

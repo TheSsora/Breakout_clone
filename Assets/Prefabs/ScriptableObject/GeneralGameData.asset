@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3931ae26c45bdc748b6dad6c43b5caeb, type: 3}
   m_Name: GeneralGameData
   m_EditorClassIdentifier: 
-  SelectedLevelID: 3
+  SelectedLevelID: 1
   BaseScene: BaseLevelScene
   BaseLevels:
     Levels:

@@ -7,7 +7,6 @@ public class MainMenu : MonoBehaviour
     [SerializeField] GeneralGameData gameData;
     private void OnEnable()
     {
-        gameData.UpdateLevels();
-        gameData.SaveLevelsData();
+        gameData.UpdateLevels();        
     }
 }

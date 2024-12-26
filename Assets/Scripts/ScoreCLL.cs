@@ -52,6 +52,8 @@ public class ScoreCLL : MonoBehaviour
         {
             GameManager.Instance.GameData.InfinityScore = GetIntScore();
             GameManager.Instance.GameData.SaveInfinityData();
+            
+            YG2.SetLeaderboard("infinityScore", (int)GameManager.Instance.GameData.InfinityScore);
         }                   
     }
     IEnumerator ScoreMultiplierTimeout()

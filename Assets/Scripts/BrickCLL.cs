@@ -12,6 +12,7 @@ public class BrickCLL : MonoBehaviour
     private void OnEnable()
     {
         destroyCount = brickData.DestroyCount;
+        disabling = false;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

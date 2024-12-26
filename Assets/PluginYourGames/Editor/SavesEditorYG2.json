@@ -1,7 +1,7 @@
 {
-    "idSave": 40,
-    "Levels": "{\"Levels\":[{\"ID\":1,\"Score\":0.0,\"IsOpen\":true},{\"ID\":2,\"Score\":21807.0,\"IsOpen\":true},{\"ID\":3,\"Score\":0.0,\"IsOpen\":true}]}",
-    "InfinityScore": 90.0,
+    "idSave": 58,
+    "Levels": "{\"Levels\":[{\"ID\":1,\"Score\":0.0,\"IsOpen\":true},{\"ID\":2,\"Score\":0.0,\"IsOpen\":false},{\"ID\":3,\"Score\":0.0,\"IsOpen\":false}]}",
+    "InfinityScore": 30.0,
     "PlatformSkins": "",
     "AudioIsOn": true,
     "AudioLoud": 1.0

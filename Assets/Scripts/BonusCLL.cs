@@ -39,6 +39,7 @@ public class BonusCLL : MonoBehaviour
         {
             GameManager.Instance.LoseCLL.CheckLose(0,1);
         }
+        Destroy(gameObject);
     }
     public void SetBall(BallCLL ball)
     {

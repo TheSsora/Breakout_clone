@@ -38,15 +38,22 @@ public class BallCLL : MonoBehaviour
             {
                 rb.velocity = new Vector2(-rb.velocity.normalized.x + 0.2f, rb.velocity.normalized.y - 0.2f).normalized * speed;
             }
-            else if(rb.velocity.normalized.x >= 0.95f)
+            else if (rb.velocity.normalized.x >= 0.95f)
             {
                 rb.velocity = new Vector2(rb.velocity.normalized.x - 0.2f, rb.velocity.normalized.y + 0.2f).normalized * speed;
             }
-        }
-        if (rb.velocity.magnitude < speed || rb.velocity.magnitude > speed)
-        {
-            rb.velocity = rb.velocity.normalized * speed;
-        }
+            if (rb.velocity.magnitude != speed)
+            {
+                if(rb.velocity.magnitude == 0)
+                {
+                    rb.velocity = new Vector2(Random.Range(-1f, 1f), Random.Range(0f, 1f)).normalized * speed;
+                }
+                else
+                {
+                    rb.velocity = rb.velocity.normalized * speed;
+                }                
+            }
+        }        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
